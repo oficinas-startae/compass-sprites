@@ -1,12 +1,12 @@
 @import compass
 
 $icons-dimensions: true
-$icons-layout: horizontal
+$icons-layout: vertical
 $icons-spacing: 20px
 @import "icons/*.png"
 
 $icons2x-dimensions: true
-$icons2x-layout: horizontal
+$icons2x-layout: vertical
 $icons2x-spacing: 20px
 @import "icons2x/*.png"
 
@@ -63,6 +63,7 @@ h1
   color: #333
 
 
+
 $icons: add remove user users calendar next previous
 
 @each $icon in $icons
@@ -75,5 +76,3 @@ $icons: add remove user users calendar next previous
         +inline-block
         margin-right: 8px
         +icons-sprite("#{$icon}")
-
-
