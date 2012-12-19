@@ -51,16 +51,17 @@ h1
   +adjust-leading-to(1)
   font-weight: bold
   //STRUCTURE
-  padding-top: 5px
-  padding-bottom: 5px
-  padding-right: 1em
-  padding-left: 1em
+  padding: .5em
   position: relative
   overflow: visible
   //STYLING
   +border-radius(4px)
   border: 1px solid #ccc
-  color: #333
+  color: #555
+  background-color: #fbbd4f
+  +background-image(linear-gradient(bottom, #f2f2f2, #fff))
+  &:hover
+    +background-image(linear-gradient(bottom, darken(#f2f2f2, 5%), #fff))
 
 
 
@@ -74,5 +75,6 @@ $icons: add remove user users calendar next previous
         width: 20px
         height: 20px
         +inline-block
-        margin-right: 8px
+        margin-right: 4px
+        margin-top: -3px
         +icons-sprite("#{$icon}")
