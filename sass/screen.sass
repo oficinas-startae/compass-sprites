@@ -1,0 +1,79 @@
+@import compass
+
+$icons-dimensions: true
+$icons-layout: horizontal
+$icons-spacing: 20px
+@import "icons/*.png"
+
+$icons2x-dimensions: true
+$icons2x-layout: horizontal
+$icons2x-spacing: 20px
+@import "icons2x/*.png"
+
+
+body
+  background-color: #f7f7f7
+  padding: 2em
+  font-family: arial
+
+h1
+  font-size: 30px
+  +icons-sprite("compass-logo")
+  width: 172px
+  height: 38px
+  +hide-text
+  
+  
+
+// NORMALISE BUTTONS CLASS
+.normalise-button
+  margin: 0
+  padding: 0
+  outline: 0
+  border: none
+  text-decoration: none
+  text-align: center
+  white-space: nowrap
+  cursor: pointer
+  vertical-align: middle
+  +background-clip(padding-box)
+  +inline-block
+
+
+.row
+  padding: 10px 0
+
+// DEFAULT BUTTON STYLE
+.button
+  @extend .normalise-button
+  //TYPOGRAPHY
+  +adjust-font-size-to(16px)
+  +adjust-leading-to(1)
+  font-weight: bold
+  //STRUCTURE
+  padding-top: 5px
+  padding-bottom: 5px
+  padding-right: 1em
+  padding-left: 1em
+  position: relative
+  overflow: visible
+  //STYLING
+  +border-radius(4px)
+  border: 1px solid #ccc
+  color: #333
+
+
+$icons: add remove user users calendar next previous
+
+@each $icon in $icons
+  .button
+    &.#{$icon}
+      &:before
+        content: ""
+        width: 20px
+        height: 20px
+        +inline-block
+        margin-right: 8px
+        +icons-sprite("#{$icon}")
+
+
